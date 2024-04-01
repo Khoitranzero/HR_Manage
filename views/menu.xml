@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<openerp>
+    <data>
+        <menuitem name="Quản lý nhân viên" id="menu_quan_ly_nhan_vien" icon="STOCK_OPEN"/>
+
+        <menuitem name="Nhân viên" id="menu_tinh_nang_quan_ly_nhan_vien" parent="menu_quan_ly_nhan_vien"/>
+        <menuitem name="Thông Tin Nhân Viên" id="menu_thong_tin_nhan_vien" parent="menu_tinh_nang_quan_ly_nhan_vien" action="action_employee_new"/>
+        <menuitem name="Danh Sách Nhân Viên" id="menu_danh_sach_nhan_vien" parent="menu_tinh_nang_quan_ly_nhan_vien" action="action_employee"/>
+
+        <menuitem name="Phòng Ban" id="menu_tinh_nang_quan_ly_phong_ban" parent="menu_quan_ly_nhan_vien"/>
+        <menuitem name="Thông Tin Phòng Ban" id="menu_thong_tin_phong_ban" parent="menu_tinh_nang_quan_ly_phong_ban" action="action_departments_new"/>
+        <menuitem name="Danh Sách Phòng Ban" id="menu_danh_sach_phong_ban" parent="menu_tinh_nang_quan_ly_phong_ban" action="action_departments"/>
+
+<!--        <menuitem name="Công Việc" id="menu_tinh_nang_quan_ly_cong_viec" parent="menu_quan_ly_nhan_vien"/>-->
+<!--        <menuitem name="Thông Tin Công Việc" id="menu_thong_tin_cong_viec" parent="menu_tinh_nang_quan_ly_cong_viec" action="action_job_new"/>-->
+<!--        <menuitem name="Danh Sách Công Việc" id="menu_danh_sach_cong_viec" parent="menu_tinh_nang_quan_ly_cong_viec" action="action_job"/>-->
+    </data>
+</openerp>

@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<openerp>
+    <data>
+        <record id="view_departments_form" model="ir.ui.view">
+             <field name="name">Form Phòng Ban</field>
+            <field name="model">departments</field>
+            <field name="arch" type="xml">
+                <form string="Phòng Ban">
+                    <group>
+                            <field name="departments_name" string="Tên Phòng Ban" placeholder="Nhập tên phòng ban"/>
+                            <field name="manage_id" string="id quản lý" placeholder="Mã quản lý"/>
+                    </group>
+                </form>
+            </field>
+        </record>
+           <record id="view_departments_tree" model="ir.ui.view">
+            <field name="name"> Danh sách phòng ban</field>
+            <field name="model">departments</field>
+            <field name="arch" type="xml">
+                <tree string="Phòng ban">
+                    <field name="departments_id"/>
+                    <field name="departments_name"/>
+                    <field name="manage_id"/>
+                </tree>
+            </field>
+        </record>
+        <record id="action_departments" model="ir.actions.act_window">
+            <field name="name">Phòng ban</field>
+            <field name="res_model">departments</field>
+            <field name="view_type">form</field>
+            <field name="view_mode">tree,form</field>
+        </record>
+        <record id="action_departments_new" model="ir.actions.act_window">
+            <field name="name">New Phòng ban</field>
+            <field name="res_model">departments</field>
+            <field name="view_type">form</field>
+            <field name="view_mode">tree,form</field>
+            <field name="view_id" ref="view_departments_form"/>
+        </record>
+    </data>
+</openerp>
