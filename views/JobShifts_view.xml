@@ -1,43 +1,44 @@
-<!--<?xml version="1.0" encoding="UTF-8" ?>-->
-<!--<openerp>-->
-<!--    <data>-->
-<!--        <record id="view_jobshifts_form" model="ir.ui.view">-->
-<!--             <field name="name">Form Công Việc</field>-->
-<!--            <field name="model">job</field>-->
-<!--            <field name="arch" type="xml">-->
-<!--                <form string="Công Việc">-->
-<!--                        <group>-->
-<!--                            <field name="job_title" string="Chức danh công việc" placeholder="Nhập Chức danh công việc"/>-->
-<!--                            <field name="min_salary" string="Lương tối thiểu" placeholder="Nhập Lương tối thiểu"/>-->
-<!--                            <field name="max_salary" string="Lương tối đa" placeholder="Nhập Lương tối đa"/>-->
-<!--                        </group>-->
-<!--                </form>-->
-<!--            </field>-->
-<!--        </record>-->
-<!--         <record id="view_job_tree" model="ir.ui.view">-->
-<!--            <field name="name"> Danh sách công việc</field>-->
-<!--            <field name="model">job</field>-->
-<!--            <field name="arch" type="xml">-->
-<!--                <tree string="Công việc">-->
-<!--                    <field name="job_id"/>-->
-<!--                    <field name="job_title"/>-->
-<!--                    <field name="min_salary"/>-->
-<!--                    <field name="max_salary"/>-->
-<!--                </tree>-->
-<!--            </field>-->
-<!--        </record>-->
-<!--        <record id="action_job" model="ir.actions.act_window">-->
-<!--            <field name="name">Công việc</field>-->
-<!--            <field name="res_model">job</field>-->
-<!--            <field name="view_type">form</field>-->
-<!--            <field name="view_mode">tree,form</field>-->
-<!--        </record>-->
-<!--        <record id="action_job_new" model="ir.actions.act_window">-->
-<!--            <field name="name">New Công Viêc</field>-->
-<!--            <field name="res_model">job</field>-->
-<!--            <field name="view_type">form</field>-->
-<!--            <field name="view_mode">tree,form</field>-->
-<!--            <field name="view_id" ref="view_job_form"/>-->
-<!--        </record>-->
-<!--    </data>-->
-<!--</openerp>-->
+<?xml version="1.0" encoding="UTF-8" ?>
+<openerp>
+    <data>
+        <record id="view_jobshifts_form" model="ir.ui.view">
+            <field name="name">Form Ca Làm</field>
+            <field name="model">jobshifts</field>
+            <field name="arch" type="xml">
+                <form string="Ca Làm">
+                    <group>
+                        <field name="job_shift_id" string="ID ca làm"/>
+                        <field name="start_hours" string="Giờ bắt đầu" placeholder="Nhập giờ bắt đầu"/>
+                        <field name="end_hours" string="Giờ kết thúc" placeholder="Nhập giờ kết thúc"/>
+                        <field name="employee_id"/>
+                    </group>
+                </form>
+            </field>
+        </record>
+        <record id="view_jobshifts_tree" model="ir.ui.view">
+            <field name="name">Danh sách Ca Làm</field>
+            <field name="model">jobshifts</field>
+            <field name="arch" type="xml">
+                <tree string="Ca Làm">
+                    <field name="job_shift_id"/>
+                    <field name="start_hours"/>
+                    <field name="end_hours"/>
+                    <field name="employee_id"/>
+                </tree>
+            </field>
+        </record>
+        <record id="action_jobshifts" model="ir.actions.act_window">
+            <field name="name">Ca Làm</field>
+            <field name="res_model">jobshifts</field>
+            <field name="view_type">form</field>
+            <field name="view_mode">tree,form</field>
+        </record>
+        <record id="action_jobshifts_new" model="ir.actions.act_window">
+            <field name="name">New Ca Làm</field>
+            <field name="res_model">jobshifts</field>
+            <field name="view_type">form</field>
+            <field name="view_mode">form</field>
+            <field name="view_id" ref="view_jobshifts_form"/>
+        </record>
+    </data>
+</openerp>

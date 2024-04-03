@@ -11,8 +11,12 @@
         <menuitem name="Thông Tin Phòng Ban" id="menu_thong_tin_phong_ban" parent="menu_tinh_nang_quan_ly_phong_ban" action="action_departments_new"/>
         <menuitem name="Danh Sách Phòng Ban" id="menu_danh_sach_phong_ban" parent="menu_tinh_nang_quan_ly_phong_ban" action="action_departments"/>
 
-<!--        <menuitem name="Công Việc" id="menu_tinh_nang_quan_ly_cong_viec" parent="menu_quan_ly_nhan_vien"/>-->
-<!--        <menuitem name="Thông Tin Công Việc" id="menu_thong_tin_cong_viec" parent="menu_tinh_nang_quan_ly_cong_viec" action="action_job_new"/>-->
-<!--        <menuitem name="Danh Sách Công Việc" id="menu_danh_sach_cong_viec" parent="menu_tinh_nang_quan_ly_cong_viec" action="action_job"/>-->
+        <menuitem name="Công Việc" id="menu_tinh_nang_quan_ly_cong_viec" parent="menu_quan_ly_nhan_vien"/>
+        <menuitem name="Thông Tin Công Việc" id="menu_thong_tin_cong_viec" parent="menu_tinh_nang_quan_ly_cong_viec" action="action_job_new"/>
+        <menuitem name="Danh Sách Công Việc" id="menu_danh_sach_cong_viec" parent="menu_tinh_nang_quan_ly_cong_viec" action="action_job"/>
+
+        <menuitem name="Ca Làm" id="menu_tinh_nang_quan_ly_ca_lam" parent="menu_quan_ly_nhan_vien"/>
+        <menuitem name="Thông Tin Ca Làm" id="menu_thong_tin_ca_lam" parent="menu_tinh_nang_quan_ly_ca_lam" action="action_jobshifts_new"/>
+        <menuitem name="Danh Sách Ca Làm" id="menu_danh_sach_ca_lam" parent="menu_tinh_nang_quan_ly_ca_lam" action="action_jobshifts"/>
     </data>
 </openerp>
