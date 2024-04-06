@@ -14,14 +14,20 @@ class Departments(osv.osv):
     }
 
     _sql_constraints = [
-        ('unique_manager_id', 'unique(manager_id)', u'Quản lý phòng ban phải duy nhất!')
+        ('unique_manager_id', 'unique(manager_id)', u'Quản lý phòng ban phải duy nhất!'),
+        ('unique_departments_id', 'unique(departments_id)', u'ID phòng ban phải duy nhất!'),
     ]
 
     def _compute_employee_count(self, cr, uid, ids, field_name, arg, context=None):
-        res = {}
         for department in self.browse(cr, uid, ids, context=context):
-            res[department.id] = len(department.employee_ids)
-        return res
+            count = 0
+            if department.employee_ids:
+                count = len(department.employee_ids)
+            department.employee_count = count
+
+    # _defaults = {
+    #     'employee_count': _compute_employee_count
+    # }
 
     def _check_max_employee_count(self, cr, uid, ids, context=None):
         for department in self.browse(cr, uid, ids, context=context):
@@ -29,8 +35,21 @@ class Departments(osv.osv):
                 return False
         return True
 
+    def _check_departments_name_not_empty(self, cr, uid, ids, context=None):
+        for department in self.browse(cr, uid, ids, context=context):
+            if not department.departments_name:
+                return False
+        return True
+
+    def _check_departments_id_not_empty(self, cr, uid, ids, context=None):
+        for department in self.browse(cr, uid, ids, context=context):
+            if not department.departments_id:
+                return False
+        return True
     _constraints = [
         (_check_max_employee_count, u'Phòng ban đã đủ nhân viên. Không thể thêm nhân viên mới!', []),
+        (_check_departments_name_not_empty, u'Tên phòng ban không được để trống!', ['departments_name']),
+        (_check_departments_id_not_empty, u'ID phòng ban không được để trống!', ['departments_id']),
     ]
 
 

@@ -20,6 +20,7 @@
                             <field name="gmail" string="Gmail" placeholder="Nhập gmail"/>
                             <field name="department_id" string="Phòng ban"/>
                             <field name="start_day" string="Ngày vào làm"/>
+                            <field name="jobshift_ids"/>
                         </group>
                     </group>
                 </form>
