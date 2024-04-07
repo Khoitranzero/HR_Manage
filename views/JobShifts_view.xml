@@ -11,6 +11,7 @@
                         <field name="start_hours" string="Giờ bắt đầu" placeholder="Nhập giờ bắt đầu"/>
                         <field name="end_hours" string="Giờ kết thúc" placeholder="Nhập giờ kết thúc"/>
                         <field name="employee_id"/>
+                        <field name="description"/>
                     </group>
                 </form>
             </field>

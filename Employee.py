@@ -3,6 +3,7 @@ from openerp.osv import osv, fields
 import datetime
 import string
 import random
+# from datetime import datetime
 
 
 class Employee(osv.osv):
@@ -67,6 +68,15 @@ class Employee(osv.osv):
                 return False
         return True
 
+    def _check_18age(self, cr, uid, ids, context=None):
+        for record in self.browse(cr, uid, ids, context=context):
+            if record.birth_day:
+                birth_date = datetime.strptime(record.birth_day, '%Y-%m-%d').date()
+                age = datetime.now().date().year - birth_date.year
+                if age < 18:
+                    return False
+        return True
+
     _sql_constraints = [
         ('unique_employee_id', 'UNIQUE(employee_id)', u'ID không phù hợp'),
         ('unique_gmail', 'UNIQUE(gmail)', u'Gmail này đã tồn tại, vui lòng nhập lại gmail phù hợp'),
@@ -80,6 +90,7 @@ class Employee(osv.osv):
         (_check_valid_gmail, u'Gmail không hợp lệ', ['gmail']),
         (_check_employee_name_not_empty, u'Tên nhân viên không được để trống!', ['employee_name']),
         (_check_gmail_not_empty, u'Gmail nhân viên không được để trống!', ['gmail']),
+        (_check_18age, u'Nhân viên chưa đủ 18 tuổi', ['birth_day']),
     ]
 
 

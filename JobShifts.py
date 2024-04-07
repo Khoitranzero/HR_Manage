@@ -9,6 +9,7 @@ class JobShifts(osv.osv):
         'job_shift_id': fields.char('Ca làm'),
         'start_hours': fields.datetime('Giờ bắt đầu'),
         'end_hours': fields.datetime('Giờ kết thúc'),
+        'description': fields.char('Mô tả'),
     }
 
     def _check_start_and_end_hours(self, cr, uid, ids, context=None):

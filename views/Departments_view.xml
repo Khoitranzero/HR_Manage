@@ -10,9 +10,9 @@
                         <field name="departments_id" string="ID phòng ban"/>
                         <field name="departments_name" string="Tên Phòng Ban"/>
                         <field name="manager_id" string="Quản lý"/>
-                        <field name="employee_count" string="Số lượng nhân viên" readonly="1"/>
+<!--                        <field name="employee_count" string="Số lượng nhân viên" readonly="1"/>-->
                         <field name="employee_ids"/>
-                        <field name="max_employee_count" string="Nhân viên tối đa"/>
+<!--                        <field name="max_employee_count" string="Nhân viên tối đa"/>-->
                     </group>
                 </form>
             </field>
@@ -25,7 +25,7 @@
                     <field name="departments_id"/>
                     <field name="departments_name"/>
                     <field name="manager_id"/>
-                    <field name="employee_count" string="Số lượng nhân viên"/>
+<!--                    <field name="employee_count" string="Số lượng nhân viên"/>-->
                 </tree>
             </field>
         </record>
